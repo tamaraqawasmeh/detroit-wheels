@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detroit Wheels</title>
+<meta name="description" content="Detroit's bike network, the Joe Louis Greenway, and where riders get hurt. A GIS Day 2026 story map from City of Detroit open data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="story" id="story">
+    <header class="masthead">
+      <p class="kicker">GIS Day 2026 · Detroit, Michigan</p>
+      <h1>Detroit<br>Wheels</h1>
+      <p class="dek">The Motor City is building a bike network. Here's how far it reaches, where the Joe Louis Greenway stands, and where riders still get hurt.</p>
+    </header>
+
+    <section class="chapter" data-chapter="network">
+      <h2><span class="num-badge">1</span><span id="s-ded">148</span> miles of bike routes</h2>
+      <p>Detroit's dedicated bike facilities add up to about <strong id="s-ded2">148 miles</strong>. Painted lanes are the most common type, followed by protected lanes and off-street paths.</p>
+      <ul class="lines" id="line-list"></ul>
+      <p class="hint">Turn each type on and off. Hover a route for its name.</p>
+    </section>
+
+    <section class="chapter" data-chapter="protected">
+      <h2><span class="num-badge">2</span>Protected or painted?</h2>
+      <p>A painted line is easy to drive over. Posts, curbs or planters are not. <strong id="s-prot">41 miles</strong> of Detroit's lanes have physical protection, mostly flexible posts. They're concentrated downtown, in Midtown and along major corridors.</p>
+    </section>
+
+    <section class="chapter" data-chapter="jlg">
+      <h2><span class="num-badge">3</span>The Joe Louis Greenway</h2>
+      <p>A planned 27.5-mile loop of trails and protected paths linking neighborhoods to the riverfront, Dearborn, Highland Park and Hamtramck. The city's data shows where it stands today:</p>
+      <div class="jlg-bar" id="jlg-bar"></div>
+      <div class="jlg-legend" id="jlg-legend"></div>
+    </section>
+
+    <section class="chapter" data-chapter="reach">
+      <h2><span class="num-badge">4</span>Within a quarter mile</h2>
+      <p>A quarter mile is about a five-minute walk with a bike, or under two minutes riding. About <strong id="s-reach">34%</strong> of Detroit lies within a quarter mile of a dedicated bike facility.</p>
+      <p><strong id="s-zero">66</strong> of 205 neighborhoods have none within a quarter mile anywhere inside them.</p>
+      <p class="hint">Darker neighborhoods are better connected. Click one to see its share.</p>
+    </section>
+
+    <section class="chapter" data-chapter="crashes">
+      <h2><span class="num-badge">5</span>Where riders get hurt</h2>
+      <div class="stat-row">
+        <div class="stat"><span class="v" id="s-crashes">640</span><span class="l">crashes involving a bicyclist, <span id="s-years">2020–2024</span></span></div>
+        <div class="stat alert"><span class="v" id="s-fatal">19</span><span class="l">deaths</span></div>
+        <div class="stat"><span class="v" id="s-serious">83</span><span class="l">serious injuries</span></div>
+      </div>
+      <p><strong id="s-off">75%</strong> of those crashes inside the city happened more than 100 feet from any dedicated bike facility, on streets where riders share space with cars.</p>
+      <p class="hint">Larger dots mark crashes with a death or serious injury.</p>
+    </section>
+
+    <section class="chapter" data-chapter="calm">
+      <h2><span class="num-badge">6</span>Slowing the streets</h2>
+      <p>Bike lanes aren't the only fix. The city's <strong>Slow Streets</strong> program has added speed humps on <strong id="s-slow">4,215</strong> residential street segments, shown in thin teal. <strong id="s-safe">23</strong> <strong>Safe Streets</strong> corridors, shown in black, are being designed for added protection.</p>
+      <p>Together with <span id="s-mogo">81</span> MoGo bike-share stations and <span id="s-repair">49</span> public repair stands, they're the building blocks of a city where more people can choose to ride.</p>
+    </section>
+
+    <footer class="methods">
+      <h3>Data &amp; method</h3>
+      <p>From the <a href="https://data.detroitmi.gov/" target="_blank" rel="noopener">City of Detroit Open Data Portal</a>: Bike Lanes, Joe Louis Greenway Route Segments, Traffic Crashes (bicycle-involved, 2020–2024), Detroit Slow Streets, Safe Streets for Detroit Corridors, MoGo Stations, Bicycle Repair Stations, and Current City of Detroit Neighborhoods.</p>
+      <p>"Dedicated" means painted, buffered or protected lanes, shared-use paths, and open Greenway segments. Shared-lane markings and signed routes are shown but not counted. Miles are summed from each segment as recorded, so overlapping segments may be counted twice. Reach is measured on a 150-meter grid of sample points. The city's Greenways layer is not used, because it doesn't distinguish built routes from planned ones.</p>
+      <p>Made for Detroit GIS Day, November 18, 2026. See also <a href="https://tamaraqawasmeh.github.io/detroit-care-mile/">The Care Mile</a> and <a href="https://tamaraqawasmeh.github.io/detroit-lead-line/">The Lead Line</a>.</p>
+    </footer>
+  </aside>
+
+  <main class="map-wrap">
+    <div id="map" role="region" aria-label="Map of Detroit's bike network"></div>
+    <div class="legend" id="legend"></div>
+    <div class="card" id="card" hidden></div>
+  </main>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

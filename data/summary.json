@@ -1,0 +1,67 @@
+{
+  "miles": {
+    "lane": 63.3,
+    "shared": 43.9,
+    "protected": 41.4,
+    "path": 30.7,
+    "jlg_open": 13.1,
+    "jlg_planned": 12.6,
+    "jlg_building": 4.8
+  },
+  "labels": {
+    "protected": "Protected bike lane",
+    "path": "Shared-use path",
+    "lane": "Painted bike lane",
+    "shared": "Shared lane / signed route",
+    "jlg_open": "Joe Louis Greenway \u00b7 open",
+    "jlg_building": "Joe Louis Greenway \u00b7 under construction",
+    "jlg_planned": "Joe Louis Greenway \u00b7 funded or planned"
+  },
+  "dedicated_miles": 148.4,
+  "jlg_miles": {
+    "jlg_open": 13.1,
+    "jlg_building": 4.8,
+    "jlg_planned": 12.6
+  },
+  "city_reach_pct": 33.8,
+  "zero_reach_hoods": 66,
+  "neighborhoods": 205,
+  "best": [
+    {
+      "name": "Mexicantown",
+      "reach": 100.0
+    },
+    {
+      "name": "Wayne State",
+      "reach": 100.0
+    },
+    {
+      "name": "Midtown",
+      "reach": 100.0
+    },
+    {
+      "name": "New Center",
+      "reach": 100.0
+    },
+    {
+      "name": "Tech Town",
+      "reach": 100.0
+    }
+  ],
+  "crashes": 640,
+  "crashes_in_city": 588,
+  "crash_years": "2020\u20132024",
+  "fatal": 19,
+  "serious": 83,
+  "crashes_off_facility": 438,
+  "pct_off_facility": 74.5,
+  "mogo": 81,
+  "repair": 49,
+  "slow_segments": 4215,
+  "safe_corridors": 23,
+  "breaks": [
+    10,
+    25,
+    75
+  ]
+}
